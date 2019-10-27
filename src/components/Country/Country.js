@@ -1,8 +1,13 @@
 import React from 'react';
+import './Country.css';
 
 const Country = props => {
     return (
-        <p>{props.countryName}</p>
+        <a
+            href={"/"}
+        >
+            {props.countryName}
+        </a>
     );
 };
 

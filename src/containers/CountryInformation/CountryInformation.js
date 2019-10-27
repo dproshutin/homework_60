@@ -29,9 +29,11 @@ class CountryInformation extends Component {
                     countryName={country.name}
                 />
             ));
+        } else {
+            countriesNames = <p>No information about the countries</p>
         }
         return (
-            <div>
+            <div className="CountryPanel">
                 {countriesNames}
             </div>
         );

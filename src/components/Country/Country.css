@@ -1,0 +1,7 @@
+a {
+    display: block;
+    margin-top: 5px;
+}
+a:last-child {
+    margin-bottom: 10px;
+}
