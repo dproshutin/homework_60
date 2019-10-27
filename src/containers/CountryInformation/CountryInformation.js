@@ -21,8 +21,18 @@ class CountryInformation extends Component {
 
     render() {
         console.log(this.state.countries);
+        let countriesNames;
+        if (this.state.countries.length > 0) {
+            countriesNames = this.state.countries.map(country => (
+                <Country
+                    key={country.id}
+                    countryName={country.name}
+                />
+            ));
+        }
         return (
             <div>
+                {countriesNames}
             </div>
         );
     }
