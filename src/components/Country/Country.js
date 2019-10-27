@@ -3,11 +3,11 @@ import './Country.css';
 
 const Country = props => {
     return (
-        <a
-            href={"/"}
+        <p
+            onClick={props.clicked}
         >
             {props.countryName}
-        </a>
+        </p>
     );
 };
 
