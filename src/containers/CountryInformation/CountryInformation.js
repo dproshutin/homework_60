@@ -15,8 +15,7 @@ class CountryInformation extends Component {
     };
 
     componentDidMount() {
-        const BASE_URL = "https://restcountries.eu/rest/v2/all?fields=name;alpha3Code";
-        axios.get(BASE_URL).then(response => {
+        axios.get("/all?fields=name;alpha3Code").then(response => {
             return response.data;
         }).then(countries => {
             const preparedCountries = countries.map(country => {
