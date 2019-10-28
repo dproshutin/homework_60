@@ -19,6 +19,8 @@ class SelectedCountry extends Component {
         return this.props.id && (!this.state.loadedCountry || this.props.id !== this.state.loadedCountry.alpha3Code);
     };
 
+    formatNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
     componentDidUpdate(prevProps, prevState) {
         if (this._shouldRequest()) {
             axios.get("/alpha/" + this.props.id)
@@ -38,7 +40,6 @@ class SelectedCountry extends Component {
                 const array = response.map(item => {
                     return item.data.name;
                 });
-                console.log(array);
                 this.setState({borders: array});
             })
     };
@@ -70,7 +71,8 @@ class SelectedCountry extends Component {
                 <div className="CountryInfo">
                     <h2>{this.state.loadedCountry.name}</h2>
                     <p>Capital: {this.state.loadedCountry.capital}</p>
-                    <p>Population: {this.state.loadedCountry.population}</p>
+                    <p>Population: {this.formatNumber(this.state.loadedCountry.population)} people</p>
+                    <p>Area: {this.formatNumber(this.state.loadedCountry.area)} sq. km.</p>
                     {flagImage}
                     <p><b>Borders with:</b></p>
                     {borderingCountries}
