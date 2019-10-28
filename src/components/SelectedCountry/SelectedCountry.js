@@ -47,16 +47,16 @@ class SelectedCountry extends Component {
     render() {
         if (this.state.loadedCountry) {
             let borderingCountries = (
-                <p>There are no bordering countries</p>
+                <p>there are no bordering countries</p>
             );
             if (this.state.borders.length > 0) {
                 borderingCountries = this.state.borders.map((country, index) => {
                     return (
-                        <p
+                        <li style={{margin: '2px'}}
                             key={country + index}
                         >
                             {country}
-                        </p>
+                        </li>
                     )
                 });
             }
@@ -79,7 +79,11 @@ class SelectedCountry extends Component {
                 </div>
             );
         }
-        return (<p style={{textAlign: 'center'}}>Please select a country...</p>);
+        return (
+            <div className="CountryInfo">
+                <p style={{margin: 'auto'}}>Please select a country...</p>
+            </div>
+        );
     }
 }
 

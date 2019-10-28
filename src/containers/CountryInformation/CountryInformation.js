@@ -31,12 +31,14 @@ class CountryInformation extends Component {
             countriesNames = this.state.countries.map(country => (
                 <Country
                     key={country.id}
+                    countryId={country.id}
+                    selected={this.state.selectedCountryId}
                     countryName={country.name}
                     clicked={() => this.countrySelectedHandler(country.id)}
                 />
             ));
         } else {
-            countriesNames = <p>No information about the countries</p>
+            countriesNames = <p style={{paddingLeft: '20px', color: 'black'}}>Countries' information is coming...</p>
         }
         return (
             <section className="Container">

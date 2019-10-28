@@ -1,7 +1,12 @@
-a {
+.listed {
     display: block;
     margin-top: 5px;
+    padding: 0px 10px;
 }
-a:last-child {
+.listed:last-child {
     margin-bottom: 10px;
+}
+.selected {
+    background-color: white;
+    color: red;
 }
